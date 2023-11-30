@@ -58,13 +58,21 @@ print(makes_twenty(9,3))
 #
 # Note: 'macdonald'.capitalize() returns 'Macdonald'
 
-def old_macdonald(name): # Strings are immutatble so I have to split the string into a list.
-    capitalizedString = name.split()
-    print(capitalizedString)
-    # return capitalizedString[0][3].upper() # = name[0:3].upper()
-    return capitalizedString[0:3].capitalize()
-
-print("Question 4: Level 1")
-print(old_macdonald('macdonald'))
+# def old_macdonald(name): # Strings are immutatble so I have to split the string into a list.
+#     capitalizedString = name.split()
+#     print(capitalizedString)
+#     # return capitalizedString[0][3].upper() # = name[0:3].upper()
+#     return capitalizedString[0:3].capitalize()
+#
+# print("Question 4: Level 1")
+# print(old_macdonald('macdonald'))
 
 # I cannot figure this one out.
+# Solution on Stack Overflow
+def old_macdonald(name):
+    capList = list(name)
+    capList[0] = capList[0].upper()
+    capList[3] = capList[3].upper()
+    return ''.join(capList) # Going to have to get familiar with ''.join(abcdef) as it comes up a lot I see.
+print("Question 4: Level 1")
+print(old_macdonald('macdonald'))
