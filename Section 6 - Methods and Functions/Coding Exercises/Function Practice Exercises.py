@@ -76,3 +76,28 @@ def old_macdonald(name):
     return ''.join(capList) # Going to have to get familiar with ''.join(abcdef) as it comes up a lot I see.
 print("Question 4: Level 1")
 print(old_macdonald('macdonald'))
+
+# MASTER YODA: Given a sentence, return a sentence with the words reversed
+# master_yoda('I am home') --> 'home am I'
+# master_yoda('We are ready') --> 'ready are We'
+#
+# Note: The .join() method may be useful here. The .join() method allows you to join together strings in a list with some connector string. For example, some uses of the .join() method:
+#
+# >>> "--".join(['a','b','c'])
+# >>> 'a--b--c'
+#
+# This means if you had a list of words you wanted to turn back into a sentence, you could just join them with a single space string:
+#
+# >>> " ".join(['Hello','world'])
+# >>> "Hello world"
+
+def master_yoda(text):
+    reverseSentence = text.split()
+    #print(reverseSentence)
+    reverseSentence.reverse()
+    #print(reverseSentence)
+    return " ".join(reverseSentence)
+
+print("Question 5: ")
+print(master_yoda('I am home'))
+print(master_yoda('We are ready'))
