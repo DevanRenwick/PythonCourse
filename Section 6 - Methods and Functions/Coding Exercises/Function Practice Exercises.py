@@ -101,3 +101,22 @@ def master_yoda(text):
 print("Question 5: ")
 print(master_yoda('I am home'))
 print(master_yoda('We are ready'))
+
+# ALMOST THERE: Given an integer n, return True if n is within 10 of either 100 or 200
+# almost_there(90) --> True
+# almost_there(104) --> True
+# almost_there(150) --> False
+# almost_there(209) --> True
+#
+# NOTE: abs(num) returns the absolute value of a number
+
+def almost_there(n):
+    if (n <= 110 and n >= 90) or (n <=210 and n >= 190):
+        return True
+    else:
+        return False
+print("Question 6: ")
+print(almost_there(90))
+print(almost_there(104))
+print(almost_there(150))
+print(almost_there(209))
