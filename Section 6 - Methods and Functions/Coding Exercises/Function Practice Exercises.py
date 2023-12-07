@@ -120,3 +120,23 @@ print(almost_there(90))
 print(almost_there(104))
 print(almost_there(150))
 print(almost_there(209))
+
+
+# EVEL 2 PROBLEMS
+# FIND 33:
+# Given a list of ints, return True if the array contains a 3 next to a 3 somewhere.
+#
+# has_33([1, 3, 3]) → True
+# has_33([1, 3, 1, 3]) → False
+# has_33([3, 1, 3]) → False
+
+def has_33(num):
+    for i in range(len(num)-1): # I forgot to include the -1 at first. This is very important so it doesn't get index out of bounds error.
+        if num[i] == 3 and num[i + 1] == 3:
+            return True
+    return False
+
+print("Part 2: Question 7: ")
+print(has_33([1, 3, 3]))
+print(has_33([1, 3, 1, 3]))
+print(has_33([3, 1, 3]))
