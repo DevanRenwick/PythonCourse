@@ -140,3 +140,17 @@ print("Part 2: Question 7: ")
 print(has_33([1, 3, 3]))
 print(has_33([1, 3, 1, 3]))
 print(has_33([3, 1, 3]))
+
+# PAPER DOLL: Given a string, return a string where for every character in the original there are three characters
+# paper_doll('Hello') --> 'HHHeeellllllooo'
+# paper_doll('Mississippi') --> 'MMMiiissssssiiippppppiii'
+
+def paper_doll(text):
+    result = ""
+    for i in text:
+        result += i*3
+    return result
+
+print("Part 2, Question 3: ")
+print(paper_doll('Hello'))
+print(paper_doll('Mississippi'))
