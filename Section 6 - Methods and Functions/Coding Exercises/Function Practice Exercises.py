@@ -151,6 +151,45 @@ def paper_doll(text):
         result += i*3
     return result
 
-print("Part 2, Question 3: ")
+print("Part 2, Question 2: ")
 print(paper_doll('Hello'))
 print(paper_doll('Mississippi'))
+
+# BLACKJACK: Given three integers between 1 and 11, if their sum is less than or equal to 21, return their sum. If their sum exceeds 21 and there's an eleven, reduce the total sum by 10. Finally, if the sum (even after adjustment) exceeds 21, return 'BUST'
+# blackjack(5,6,7) --> 18
+# blackjack(9,9,9) --> 'BUST'
+# blackjack(9,9,11) --> 19
+
+def blackjack(a,b,c): #I didn't read "given 3 numbers at first, woops"
+    total = a + b + c
+    if total <= 21:
+        return total
+    elif 11 in (a,b,c) and total - 10 <= 21: # I was getting an error here by doing total(a,b,c).
+        return total - 10
+    else:
+        return "BUST"
+
+
+    # if numbers.sum() <= 21:
+    #     return numbers
+    # elif numbers.sum() > 21 and numbers == 11:
+    #     numbers -= 10
+    # elif numbers.sum() > 21:
+    #     return "BUST"
+
+
+    # sum = 0
+    # # for i in numbers:
+    #     # if (numbers [i] < 1) or (numbers [i] > 11):
+    #         # print("Invalid numbers: Try again.")
+    # if sum <= 21:
+    #     return sum
+    # elif sum >= 21 and numbers == 11:
+    #     return sum - 10
+    # elif sum > 21:
+    #     return "Bust"
+
+print("Part 2: Question 3")
+print(blackjack(5,6,7))
+print(blackjack(9,9,9))
+print(blackjack(9,9,11))
