@@ -203,14 +203,29 @@ print(blackjack(9,9,11))
 # summer_69([2, 1, 6, 9, 11]) --> 14
 
 def summer_69(numbers):
-    sumOfnumbers = []
-    for i in numbers:
-        if numbers[i] != 6:
-            continue
-        elif numbers[i] == 6:
+    sumOfnumbers = 0
+    ignoreSection = False
 
+    for num in numbers:
+        if ignoreSection:
+            if num == 9:
+                ignoreSection = False
+        else:
+            if num == 6:
+                ignoreSection = True
+            else:
+                sumOfnumbers +=num
+    return sumOfnumbers
+    # # for num in numbers:
+    #     if numbers[i] != 6:
+    #         sumOfnumbers += numbers[i]
+    #     elif numbers[i] == 6:
+    #
+    # return sumOfnumbers
 
 print("Part 2: Final Question ")
 print(summer_69([1, 3, 5]))
 print(summer_69([4, 5, 6, 7, 8, 9]))
 print(summer_69([2, 1, 6, 9, 11]))
+
+# This question was very tricky. You want to check to make sure the ignore section is done first before summing the numbers.
