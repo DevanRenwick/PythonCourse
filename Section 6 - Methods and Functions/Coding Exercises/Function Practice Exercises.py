@@ -252,3 +252,34 @@ print(spy_game([1,2,4,0,0,7,5]))
 print(spy_game([1,7,2,0,4,5,0]))
 
 # Also a very tricky one. Created a for loop to track the position within the list and match it with 007.
+
+# COUNT PRIMES: Write a function that returns the number of prime numbers that exist up to and including a given number
+# count_primes(100) --> 25
+#
+# By convention, 0 and 1 are not prime.
+
+# def count_primes(primeNum):
+
+# print(count_primes(100))
+
+# Just for fun:
+# PRINT BIG: Write a function that takes in a single letter, and returns a 5x5 representation of that letter
+# print_big('a')
+#
+# out:   *
+#       * *
+#      *****
+#      *   *
+#      *   *
+# HINT: Consider making a dictionary of possible patterns, and mapping the alphabet to specific 5-line combinations of patterns.
+# For purposes of this exercise, it's ok if your dictionary stops at "E".
+
+def print_big(letter):
+    if letter == 'a':
+        print("  * " + "\n * *" + "\n*****" + "\n*   *" + "\n*   *")
+    elif letter == 'b':
+        print("*****" + "\n*  **" + "\n***" + "\n*  **" + "\n*****")
+
+print("Bonus question!")
+print(print_big('a'))
+print(print_big('b'))
