@@ -232,7 +232,23 @@ print(summer_69([2, 1, 6, 9, 11]))
 
 # SPY GAME: Write a function that takes in a list of integers and returns True if it contains 007 in order
 #  spy_game([1,2,4,0,0,7,5]) --> True
-#  spy_game([1,0,2,4,0,5,7]) --> True
-#  spy_game([1,7,2,0,4,5,0]) --> False
+#  spy_game([1,2,4,0,0,7,5]) --> True
+#  spy_game([1,7,2,0,4,5,0) --> False
 
 def spy_game(numList):
+    position = 0
+    for num in numList:
+        if position == 0 and num == 0:
+            position += 1
+        elif position == 1 and num == 0:
+            position += 1
+        elif position == 2 and num == 7:
+            return True
+
+    return False
+
+print(spy_game([1,2,4,0,0,7,5]))
+print(spy_game([1,2,4,0,0,7,5]))
+print(spy_game([1,7,2,0,4,5,0]))
+
+# Also a very tricky one. Created a for loop to track the position within the list and match it with 007.
