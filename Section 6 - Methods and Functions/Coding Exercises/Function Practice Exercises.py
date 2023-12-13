@@ -15,6 +15,34 @@ print("Question 1: ")
 print(lesser_of_two_evens(2,4))
 print(lesser_of_two_evens(2,5))
 
+# The way the guide did it: (Although my answer is better here.)
+def lesser_of_two_evens(a,b):
+    if (a % 2 == 0) and (b % 2 == 0):
+        #BOTH NUMBERS ARE EVEN
+        if a < b:
+            result = a
+        else:
+            result = b
+    else:
+        # ONE OR BOTH NUMBERS ARE ODD.
+        if a > b:
+            result = a
+        else:
+            result = b
+
+    return result
+
+# Can clean it up even more:
+def lesser_of_two_evens(a,b):
+    if (a % 2 == 0) and (b % 2 == 0):
+        #BOTH NUMBERS ARE EVEN
+        result = min(a,b)
+    else:
+        # ONE OR BOTH NUMBERS ARE ODD.
+        result = max(a,b)
+    return result
+
+
 # Question 2
 
 # ANIMAL CRACKERS: Write a function that takes a two-word string and returns True if both words begin with same letter
