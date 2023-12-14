@@ -79,6 +79,9 @@ def makes_twenty(n1,n2):
         return True
     else:
         return False
+
+    # you can also do just:
+    # return (n1+n2) == 20 or n1 ==20 or n2 ==20)
 print("Question 3: ")
 print(makes_twenty(20,10))
 print(makes_twenty(9,3))
