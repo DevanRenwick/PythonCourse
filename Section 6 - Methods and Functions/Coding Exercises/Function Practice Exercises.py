@@ -54,11 +54,15 @@ def lesser_of_two_evens(a,b):
 #     return word[0][0] == word[1][0]
 def animal_crackers(text):
     word = text.split()
+    # To take into account here in regards to lower case and upper case:
+    # word = text.lower().split()
 
     if word[0][0] == word[1][0]:
         return True
     else:
         return False
+    # Could also just do:
+    # return word[0][0] == word[1][0]
 print("Question 2: ")
 print(animal_crackers('Levelheaded Llama'))
 print(animal_crackers('Crazy Kangaroo'))
