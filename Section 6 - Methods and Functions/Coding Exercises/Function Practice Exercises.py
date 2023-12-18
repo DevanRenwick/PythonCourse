@@ -155,6 +155,15 @@ print(master_yoda('I am home'))
 print(master_yoda('We are ready'))
 
 def master_yoda(text):
+    wordlist = text.split()
+    reverse_word_list = wordlist[::-1] # This means from begining to end, it will return the last element in the list first.
+    return ' '.join(reverse_word_list)
+
+# How the join method works:
+# Imagine we have a list here:
+mylist = ['a','b','c']
+'--'.join(mylist)
+# What this does is it concatenates the list between every item in the list.
 
 # ALMOST THERE: Given an integer n, return True if n is within 10 of either 100 or 200
 # almost_there(90) --> True
@@ -175,8 +184,12 @@ print(almost_there(104))
 print(almost_there(150))
 print(almost_there(209))
 
+# Solution
+def almost_there(n):
+   return (abs(100-n) <= 10) or (abs(200-n) <= 10)
+    # The abs() is a better solution as it will check the absolute value in range with 100, meaninig 90 or 110 and the same with 200, 190 or 210.
 
-# EVEL 2 PROBLEMS
+# LEVEL 2 PROBLEMS
 # FIND 33:
 # Given a list of ints, return True if the array contains a 3 next to a 3 somewhere.
 #
@@ -195,6 +208,17 @@ print(has_33([1, 3, 3]))
 print(has_33([1, 3, 1, 3]))
 print(has_33([3, 1, 3]))
 
+# Solution
+def has_33(nums):
+    for i in range(0,len(nums)-1):
+        if nums[i] == 3 and nums [i+1] == 3:
+            return True # If we go through the whole for loop and there are no 3's together, it will return false.
+    return False
+
+# If you wanted to get fancy, you could do : if nums[i:i+2] == [3,3]
+# For slicing, the first part is start, second after : is stop, and third part is step(default is 1). The reason why the above is i+2 and not i+1 is because it's exclusive where the start
+# is inclusive and will include the position at i. It means element i, then one element after that one.
+
 # PAPER DOLL: Given a string, return a string where for every character in the original there are three characters
 # paper_doll('Hello') --> 'HHHeeellllllooo'
 # paper_doll('Mississippi') --> 'MMMiiissssssiiippppppiii'
@@ -208,6 +232,16 @@ def paper_doll(text):
 print("Part 2, Question 2: ")
 print(paper_doll('Hello'))
 print(paper_doll('Mississippi'))
+
+# Solution:
+
+def paper_doll(text):
+    result = ""
+    for char in text:
+        result += char*3
+    return result
+
+# Here we are continually concatenating to a string
 
 # BLACKJACK: Given three integers between 1 and 11, if their sum is less than or equal to 21, return their sum. If their sum exceeds 21 and there's an eleven,
 # reduce the total sum by 10. Finally, if the sum (even after adjustment) exceeds 21, return 'BUST'
@@ -224,6 +258,14 @@ def blackjack(a,b,c): #I didn't read "given 3 numbers at first, woops"
     else:
         return "BUST"
 
+# Solution
+def blackjack(a,b,c):
+    if sum ([a,b,c]) <= 21:
+        return sum([a,b,c])
+    elif 11 in [a,b,c] and sum([a,b,c]) <= 31:
+        return sum([a,b,c])-10
+    else:
+        return "BUST"
 
     # if numbers.sum() <= 21:
     #     return numbers
@@ -281,6 +323,31 @@ print("Part 2: Final Question ")
 print(summer_69([1, 3, 5]))
 print(summer_69([4, 5, 6, 7, 8, 9]))
 print(summer_69([2, 1, 6, 9, 11]))
+
+# Solution
+def summer_69(arr):
+    total = 0
+    add = True
+    for num in arr:
+        while add:
+            if num != 6:
+                total += num
+                break
+            else:
+                add = False
+        while not add:
+            if num != 9:
+                break
+            else:
+                add = True
+                break
+    return total
+
+# In this solution logic:
+# We start with a total that = 0.
+# Then we have a boolean condition called add. By default, we are going to assume we add all the numbers in the array.
+# Then going through the array saying for every number in the array, if add is true, then do the following check. If number is 6, take the total, add the number in there, then break out of while
+# loop, which brings you back to the for loop where can continue along. Then going to say else, set add = to false. now just waiting for the number .
 
 # This question was very tricky. You want to check to make sure the ignore section is done first before summing the numbers.
 
