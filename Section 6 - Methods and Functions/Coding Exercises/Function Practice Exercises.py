@@ -369,8 +369,22 @@ def spy_game(numList):
     return False
 
 print(spy_game([1,2,4,0,0,7,5]))
-print(spy_game([1,2,4,0,0,7,5]))
+print(spy_game([1,0,2,4,0,5,7]))
 print(spy_game([1,7,2,0,4,5,0]))
+
+# Solution
+def spy_game(nums):
+    code = [0,0,7,'x'] # In this case, if we hit the first item in the list, we will just pop it off. This is also an outside data structure.
+    # [0,7,'x']
+    # [7,'x']
+    # ['x'] length=1
+    for num in nums:
+        if num == code[0]:
+                  code.pop(0)
+    return len(code) == 1
+
+    # This for loop goes through code list, checks position 0, if its 0, pop it off, then goes through it again, checks for 0, pops it off, then checks for 7, if its 7, it pops it off. Then the
+    # list is at length 1, so we return that.
 
 # Also a very tricky one. Created a for loop to track the position within the list and match it with 007.
 
@@ -379,9 +393,34 @@ print(spy_game([1,7,2,0,4,5,0]))
 #
 # By convention, 0 and 1 are not prime.
 
-# def count_primes(primeNum):
+def count_primes(num):
+     # Since we are not counting 0 and 1 as primes, we may as well have a check for them.
+    if num < 2: # Initially I had num == 0 or num == 1
+        return 0
+    # 2 or greater
+    # Store our prime numbers
+    primes = [2]
+    # Counter going up to the input num
+    x = 3
 
-# print(count_primes(100))
+    # x is going through every number up to the input number.
+    while x <= num:
+        # Check if x is prime
+        for y in range(3,x,2): # The reason we are going by 2 is because even numbers beyond 2 won't be prime. You can also say for y in primes:
+            if x%y == 0:
+                x += 2
+                break
+        else:
+            primes.append(x)
+            x += 2
+    print(primes)
+    return len(primes)
+print(count_primes(100))
+
+# So for this, primes = [2], this is starting off the count with the number 2 in there. So we can start off with 3. The bonus of starting off with 3 is that you can use a step count of 2
+# where is says range(3,x,2)as well as adding 2 to x. Then in the while loop, we are going through x always the way to the num input, check if that x is prime. If it is prime, append it to
+# the prime list. Then print the list of primes and the list length.
+
 
 # Just for fun:
 # PRINT BIG: Write a function that takes in a single letter, and returns a 5x5 representation of that letter
