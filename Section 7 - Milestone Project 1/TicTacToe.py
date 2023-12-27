@@ -13,4 +13,4 @@
 # An "Advanced Solution" Notebook
 
 def
-    #place holder. Its christmas!
+    #place holder. Its christmas! Another placeholder, its boxing day!
