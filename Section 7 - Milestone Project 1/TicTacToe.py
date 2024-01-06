@@ -23,5 +23,8 @@ row1 = [' ', ' ', ' ']
 row2 = [' ', ' ', ' ']
 row3 = [' ', ' ', ' ']
 
+def userInput():
+    #Take in user input here
+
 print("This is my tic tac toe game")
 display(row1, row2, row3)
