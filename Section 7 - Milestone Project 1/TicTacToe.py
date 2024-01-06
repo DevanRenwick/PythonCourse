@@ -15,6 +15,7 @@
 
 def display(row1, row2, row3):
     # Displays the board for players.
+    # Placeholder
     print(row1)
     print(row2)
     print(row3)
